@@ -3,32 +3,35 @@ body {
     background-size: cover; /* Cover the entire viewport */
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Prevent the image from repeating */
-    background-attachment: fixed
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
 .box{
     width: 70%;
     height: 680px;
-    position: fixed;
+    position: absolute;
     background-color: rgba(255, 255, 255, 0.2);
-    /* background: rgba(255, 255, 255, 0.2); */
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    margin-top: 5%;
-    margin-left: 15%
-    /* border: 1px solid rgba(255, 255, 255, 0.3); */
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
 }
 .box1 {
     width: 50%;
-    height: 530px;
-    position: fixed;
+    height: 550px;
+    position: absolute;
     background-color: rgba(0, 0, 0, 0.381);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.381);
-    margin-left: 3%;
-    margin-top: 8%;
+    margin: 85px 50px 5px 29px; 
+    /* (top , right , bottom , left) */
     z-index: -1;
     
 }
@@ -39,11 +42,26 @@ body {
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 10px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.381);
+    display: flex;
     margin-left: 5.3%;
     margin-top: 16%;
     border-color: rgba(255, 255, 255, 0.2);
 }
 .boxName::placeholder {
+    color: rgba(208, 208, 208, 0.859);
+}
+.boxNameL {
+    width: 45%;
+    height: 50px;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.381);
+    margin-left: 5.3%;
+    margin-top: 25%;
+    border-color: rgba(255, 255, 255, 0.2);
+}
+.boxNameL::placeholder {
     color: rgba(208, 208, 208, 0.859);
 }
 .boxContactNum {
@@ -102,6 +120,20 @@ body {
 .boxPassword::placeholder {
     color: rgba(208, 208, 208, 0.859);
 }
+.boxPasswordL {
+    width: 45%;
+    height: 50px;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.381);
+    margin-left: 5.3%;
+    margin-top: 35%;
+    border-color: rgba(255, 255, 255, 0.2);
+}
+.boxPasswordL::placeholder {
+    color: rgba(208, 208, 208, 0.859);
+}
 .loginPageLeftTitle{
     font-size: 50px;
     text-align: center;
@@ -145,6 +177,9 @@ body {
     height: 680px;
     border-top-right-radius: 16px;
     border-bottom-right-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .boxRightP{
     font-size: 50px;
@@ -158,6 +193,8 @@ body {
     text-align: center;
     color: #7b1d09;
     font-weight: 500;
+    align-items: center;
+    justify-content: center;
 }
 .btnLogin {
     position: absolute;
@@ -172,6 +209,26 @@ body {
     border-radius: 25px;
 }
 .btnLogin:hover {
+    background-color: #ee5f47;
+    color: white;
+    border-color: #ee5f47;
+    z-index: 1;
+}
+.btnLoginL {
+    position: absolute;
+    margin-left: 14%;
+    margin-top: 15%;
+    width: 155px;
+    height: 45px;
+    font-size: 20px;
+    color: #ee5f47;
+    font-weight: 700;
+    font-family: sans-serif;
+    border-radius: 25px;
+    border-color: #ee5f47;
+    z-index: 1;
+}
+.btnLoginL:hover {
     background-color: #ee5f47;
     color: white;
     border-color: #ee5f47;
@@ -195,6 +252,23 @@ body {
     color: white;
     border-color: #ee5f47;
 }
+.btnSignUpL {
+    position: absolute;
+    margin-left: 25%;
+    margin-top: 15%;
+    width: 155px;
+    height: 45px;
+    font-size: 20px;
+    color: #ee5f47;
+    font-weight: 700;
+    font-family: sans-serif;
+    border-radius: 25px;
+}
+.btnSignUpL:hover {
+    background-color: #ee5f47;
+    color: white;
+    border-color: #ee5f47;
+}
 .btnLetsGo {
     position: absolute;
     margin-left: 16%;
@@ -208,6 +282,23 @@ body {
     border-radius: 25px;
 }
 .btnLetsGo:hover {
+    background-color: #ee5f47;
+    color: white;
+    border-color: #ee5f47;
+}
+.btnLetsGoL {
+    position: absolute;
+    margin-left: 22%;
+    margin-top: 48%;
+    width: 110px;
+    height: 45px;
+    font-size: 18px;
+    color: #ee5f47;
+    font-weight: 700;
+    font-family: sans-serif;
+    border-radius: 25px;
+}
+.btnLetsGoL:hover {
     background-color: #ee5f47;
     color: white;
     border-color: #ee5f47;
