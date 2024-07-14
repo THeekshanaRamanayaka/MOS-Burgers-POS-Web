@@ -30,13 +30,15 @@
     font-size: 18px;
     font-weight: 600;
     border-radius: 10px;
-    color: #ee5f47;
+    color: white;
+    background-color: #ee5f47;
+    border-color: #ee5f47;
     font-family: sans-serif;
 }
 .btnPlaceOrder:hover {
-    background-color: #ee5f47;
-    color: white;
-    border-color: #ee5f47;
+    color: #ee5f47;
+    border-color: white;
+    background-color: white;
 }
 .btnStores {
     position: absolute;
@@ -88,6 +90,24 @@
     font-family: sans-serif;
 }
 .btnOrders:hover {
+    background-color: #ee5f47;
+    color: white;
+    border-color: #ee5f47;
+}
+.btnReports {
+    position: absolute;
+    margin-top: 18%;
+    margin-left: 0.65%;
+    margin-right: 0.5%;
+    width: 195px;
+    height: 40px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 10px;
+    color: #ee5f47;
+    font-family: sans-serif;
+}
+.btnReports:hover {
     background-color: #ee5f47;
     color: white;
     border-color: #ee5f47;
@@ -269,13 +289,15 @@
     font-size: 18px;
     font-weight: 600;
     border-radius: 10px;
-    color: #ee5f47;
+    color: white;
+    background-color: #ee5f47;
+    border-color: #ee5f47;
     font-family: sans-serif;
 }
 .btnPlaceOrderRP:hover {
-    background-color: #ee5f47;
-    color: white;
-    border-color: #ee5f47;
+    color: #ee5f47;
+    border-color: white;
+    background-color: white;
 }
 
 .centerPanelStores {
