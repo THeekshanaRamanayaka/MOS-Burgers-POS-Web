@@ -133,8 +133,6 @@
     border-radius: 10px;
     color: #ee5f47;
     font-family: sans-serif;
-    margin-top: 5%;
-    margin-left: 1%;
 }
 .btnBurgers:hover {
     background-color: #ee5f47;
@@ -150,8 +148,6 @@
     border-radius: 10px;
     color: #ee5f47;
     font-family: sans-serif;
-    margin-top: 5%;
-    margin-left: 17.2%;
 }
 .btnSubmarines:hover {
     background-color: #ee5f47;
@@ -167,8 +163,6 @@
     border-radius: 10px;
     color: #ee5f47;
     font-family: sans-serif;
-    margin-top: 5%;
-    margin-left: 33.3%;
 }
 .btnFries:hover {
     background-color: #ee5f47;
@@ -184,8 +178,6 @@
     border-radius: 10px;
     color: #ee5f47;
     font-family: sans-serif;
-    margin-top: 5%;
-    margin-left: 49.5%;
 }
 .btnPasta:hover {
     background-color: #ee5f47;
@@ -201,8 +193,6 @@
     border-radius: 10px;
     color: #ee5f47;
     font-family: sans-serif;
-    margin-top: 5%;
-    margin-left: 65.7%;
 }
 .btnChicken:hover {
     background-color: #ee5f47;
@@ -218,8 +208,6 @@
     border-radius: 10px;
     color: #ee5f47;
     font-family: sans-serif;
-    margin-top: 5%;
-    margin-left: 81.8%;
 }
 .btnBeverages:hover {
     background-color: #ee5f47;
@@ -301,6 +289,9 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 .btnItemPanel {
+    margin-top: 6.5%;
+}
+.btnItemPanelStores {
     margin-top: 5%;
 }
 .btnBurgersStores {
@@ -392,4 +383,87 @@
     background-color: #ee5f47;
     color: white;
     border-color: #ee5f47;
+}
+.box5 {
+    width: 98%;
+    height: 795px;
+    background-color: rgba(255, 255, 255, 0.193);
+    border-radius: 10px;
+    margin-top: 2.5%;
+}
+.boxEnterCustomerID {
+    width: 90%;
+    height: 40px;
+    margin: 3% 5% 0% 5%;
+    background-color: rgba(255, 255, 255, 0.738);
+    border-radius: 10px;
+    border-color: #ee5f47;
+}
+.boxEnterCustomerID::placeholder {
+    color: rgb(168, 168, 168);
+}
+.boxEnterCustomerNameC {
+    width: 90%;
+    height: 40px;
+    margin: 3% 5% 0% 5%;
+    background-color: rgba(255, 255, 255, 0.738);
+    border-radius: 10px;
+    border-color: #ee5f47;
+}
+.boxEnterCustomerNameC::placeholder {
+    color: rgb(168, 168, 168);
+}
+.btnPlaceOrderC {
+    position: absolute;
+    margin: 3% 0% 0% 3%;
+    width: 250px;
+    height: 45px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 10px;
+    color: white;
+    background-color: #ee5f47;
+    border-color: #ee5f47;
+    font-family: sans-serif;
+}
+.btnPlaceOrderC:hover {
+    color: #ee5f47;
+    border-color: white;
+    background-color: white;
+}
+.btnPlaceOrderCU {
+    position: absolute;
+    margin: 8% 0% 0% 3%;
+    width: 250px;
+    height: 45px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 10px;
+    color: white;
+    background-color: #ee5f47;
+    border-color: #ee5f47;
+    font-family: sans-serif;
+}
+.btnPlaceOrderCU:hover {
+    color: #ee5f47;
+    border-color: white;
+    background-color: white;
+}
+.btnPlaceOrderCD {
+    position: absolute;
+    margin: 13% 0% 0% 3%;
+    width: 250px;
+    height: 45px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 10px;
+    color: white;
+    background-color: #ee5f47;
+    border-color: #ee5f47;
+    font-family: sans-serif;
+}
+.btnPlaceOrderCD:hover {
+    color: #ee5f47;
+    border-color: white;
+    background-color: white;
 }
