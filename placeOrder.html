@@ -22,10 +22,10 @@
                 </div>
                 <div class="d-grid gap-2">
                     <button class="btn btn-light btnPlaceOrder">Place Order</button>
-                    <button class="btn btn-light btnStores">Stores</button>
-                    <button class="btn btn-light btnCustomers">Customers</button>
-                    <button class="btn btn-light btnOrders">Orders</button>
-                    <button class="btn btn-light btnLogout">Logout</button>
+                    <button class="btn btn-light btnStores" onclick="Stores()" id="Stores">Stores</button>
+                    <button class="btn btn-light btnCustomers" onclick="Customer()" id="Customer">Customers</button>
+                    <button class="btn btn-light btnOrders" onclick="Orders()" id="Orders">Orders</button>
+                    <button class="btn btn-light btnLogout" onclick="logout()" id="logout">Logout</button>
                 </div>
             </div>
             <div class="col-12 col-md-7 centerPanel">
@@ -92,5 +92,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    <script src="app.js"></script>
 </body>
 </html>

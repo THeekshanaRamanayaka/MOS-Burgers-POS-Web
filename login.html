@@ -18,16 +18,16 @@
             <div class="col-12 col-md-7">
                 <div class="d-flex justify-content-between mb-3">
                     <button class="btn btn-light btnLoginL">Log in</button>
-                    <button class="btn btn-light btnSignUpL">Sign Up</button>
+                    <button class="btn btn-light btnSignUpL" onclick="signUp()" id="signup">Sign Up</button>
                 </div>
                 <div class="mb-3">
-                    <input type="text" class="form-control boxNameL" placeholder="Full Name">
+                    <input type="text" class="form-control boxNameL" id="logName" placeholder="Full Name">
                 </div>
                 <div class="mb-3">
-                    <input type="password" class="form-control boxPasswordL" placeholder="Password">
+                    <input type="password" class="form-control boxPasswordL" id="logPassword" placeholder="Password">
                 </div>
                 <div class="d-flex justify-content-between">
-                    <button class="btn btn-light btnLetsGoL">Let's go</button>
+                    <button class="btn btn-light btnLetsGoL" onclick="loginLetsGo()" id="loginLetsGo">Let's go</button>
                 </div>
                 <div class="box1 d-flex mt-lg-5">
                 </div>
@@ -45,5 +45,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    <script src="app.js"></script>
 </body>
 </html>

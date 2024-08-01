@@ -268,6 +268,7 @@ body {
     background-color: #ee5f47;
     color: white;
     border-color: #ee5f47;
+    z-index: 1;
 }
 .btnLetsGo {
     position: absolute;

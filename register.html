@@ -17,27 +17,27 @@
         <div class="row">
             <div class="col-12 col-md-7">
                 <div class="d-flex justify-content-between mb-3">
-                    <button class="btn btn-light btnLogin">Log in</button>
+                    <button class="btn btn-light btnLogin" onclick="regLogin()" id="regLogin">Log in</button>
                     <button class="btn btn-light btnSignUp">Sign Up</button>
                 </div>
                 <div class="mb-3">
-                    <input type="text" class="form-control boxName" placeholder="Full Name">
+                    <input type="text" class="form-control boxName" id="regName" placeholder="Full Name">
                 </div>
                 <div class="mb-3">
-                    <input type="text" class="form-control boxContactNum" placeholder="Contact Number (+94)">
+                    <input type="text" class="form-control boxContactNum" id="regContactNumber" placeholder="Contact Number (+94)">
                 </div>
                 <div class="mb-3">
-                    <input type="email" class="form-control boxEmail" placeholder="Email Address">
+                    <input type="email" class="form-control boxEmail" id="regEmail" placeholder="Email Address">
                 </div>
                 <div class="mb-3">
-                    <input type="text" class="form-control boxHome" placeholder="Home Address">
+                    <input type="text" class="form-control boxHome" id="regAddress" placeholder="Home Address">
                 </div>
                 <div class="mb-3">
-                    <input type="password" class="form-control boxPassword" placeholder="Password">
+                    <input type="password" class="form-control boxPassword" id="regPassword" placeholder="Password">
                 </div>
                 <div class="d-flex justify-content-between">
-                    <button class="btn btn-light btnLetsGo">Let's go</button>
-                    <button class="btn btn-light btnClear">Clear</button>
+                    <button class="btn btn-light btnLetsGo" onclick="regLetsGo()" id="regLetsGo">Let's go</button>
+                    <button class="btn btn-light btnClear" onclick="regClear()" id="regClear">Clear</button>
                 </div>
                 <div class="box1 d-flex mt-lg-5">
                 </div>
@@ -55,5 +55,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    <script src="app.js"></script>
 </body>
 </html>
