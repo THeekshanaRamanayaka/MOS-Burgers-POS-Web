@@ -147,7 +147,7 @@ let currentCategory = "Burgers";
 function renderProductList(category) {
     console.log("render");
     currentCategory = category;
-    const productListContainer = document.getElementById('order-list');
+    const productListContainer = document.getElementById('product-list');
     productListContainer.innerHTML = '';
 
     if (productList[category]) {
@@ -166,6 +166,21 @@ function renderProductList(category) {
         });
     }
 }
+
+const orderList = [];
+function addToOrderList(index) {
+    const product = productList[currentCategory][index];
+    const orderItem = orderList.find(item => item.itemCode === product.itemCode);
+    if (orderItem) {
+        orderItem.quantity += 1;
+    } else {
+        orderList.push({...product, quantity:1 });
+    }
+    updateOrderList();
+}
+// function updateOrderList() {
+//     const orderListContainer = 
+// }
 
 document.addEventListener('DOMContentLoaded', () => {
     renderProductList('Burgers');
