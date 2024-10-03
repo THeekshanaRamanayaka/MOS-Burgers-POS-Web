@@ -11,8 +11,8 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    ​<link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/styleHome.css">
+    ​<link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/styleHome.css">
 </head>
 <body>
     <div class="container-fluid">
@@ -63,29 +63,38 @@
                     <h4 class="m-auto txtSelectedItems">Selected Items</h4>
                 </div>
                 <div class="m-1">
-                    <input type="text" class="form-control boxEnterCustomerName" placeholder="Enter Customer Name">
+                    <input type="text" class="form-control boxEnterCustomerName" id="customer-phoneNumber" placeholder="Enter Customer Telephone Number">
                 </div>
                 <div class="m-1">
-                    <input type="text" class="form-control boxEnterCustomerName" placeholder="Enter Customer Telephone Number">
+                    <input type="text" class="form-control boxEnterCustomerName" id="customer-name" placeholder="Enter Customer Name">
                 </div>
-                <div class="box3 d-flex justify-content-center" id="order-list">
-                    
+                <div class="box3 pt-1 overflow-auto">
+                    <div class="order-list" id="order-list">
+
+                    </div>
                 </div>
+
+                <div class="d-flex justify-content-between">
+                    <p class="mx-3 mt-2 mb-0 pooid">OrderId: <span id="order-id" style="color: #F54628;"></span></p>
+                    <p class="mt-2 mx-4 poti">Total items: <span id="total-items">0</span></p>
+                    <button class="btn btn-link text-danger m-0 poca" onclick="clearOrderList()">Clear all</button>
+                </div>
+
                 <div class="box4">
                     <div class="d-flex mx-3">
                         <h6 class="mb-3 mt-2">Payment Summary</h6>
                     </div>
                     <div>
-                        <p class="mb-1 mx-3 subTotal">Sub total</p>
+                        <p class="mb-1 mx-3 subTotal">Sub total: <span id="subTotal"></span></p>
                     </div>
                     <div>
-                        <p class="mb-1 mx-3 subTotal">Discount</p>
+                        <p class="mb-1 mx-3 subTotal">Discount: <span id="lblDiscount"></span></p>
                     </div>
                     <div>
                         <p class="mb-1 mx-3 subTotal">----------------------------------------</p>
                     </div>
                     <div class="d-flex mx-3">
-                        <h6 class="mb-3">Total Payment</h6>
+                        <h6 class="mb-3">Total Payment: <span id="total"></span></h6>
                     </div>
                     <div>
                         <button class="btn btn-light btnPlaceOrderRP">Place Order</button>

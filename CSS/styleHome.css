@@ -287,7 +287,24 @@ color: #ee5f47;
 font-size: 1rem;
 font-weight: 500;
 }
-
+.order-item p {
+    font-weight: 500;
+    font-size: 0.65rem;
+}
+.order-item {
+    width: 90%;
+    height: fit-content;
+    background-color: #d8d8d8a2;
+    border-radius: 10px;
+    border-bottom: 1px solid #ddd;
+}
+.btnDelete {
+    border: none;
+    background: none;
+    width: 0;
+    height: 0;
+    cursor: pointer;
+}
 
 /* place order selected item panel */
 .box2 {
@@ -323,10 +340,19 @@ font-weight: 500;
     background-color: rgba(255, 255, 255, 0.193);
     border-radius: 10px;
 }
+.pooid {
+    font-size: 0.8rem;
+}
+.poti {
+    font-size: 0.8rem;
+}
+.poca {
+    font-size: 0.8rem;
+}
 .box4 {
     width: 90%;
     height: 150px;
-    margin: 6% 5% 0% 5%;
+    margin: 0% 5% 0% 5%;
     background-color: rgba(221, 221, 221, 0.72);
     border-radius: 10px;
 }
@@ -337,7 +363,7 @@ font-weight: 500;
 }
 .btnPlaceOrderRP {
     position: absolute;
-    margin-top: 1%;
+    margin-top: 8px;
     margin-left: 4%;
     margin-right: 0.5%;
     width: 195px;

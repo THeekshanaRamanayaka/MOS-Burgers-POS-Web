@@ -32,6 +32,7 @@ function addUser(name, contactNumber, email, address, password) {
 
     return true;
 }
+
 if (users.length === 0) {
     addUser("Employee", "+94771234567", "Employee@example.com", "123 Main St, Colombo", "123");
 }
@@ -61,6 +62,7 @@ function regLetsGo() {
         alert("Registration failed. Please check your inputs and try again.");
     }
 }
+
 function regClear() {
     document.getElementById("regName").value = "";
     document.getElementById("regContactNumber").value = "";
@@ -68,6 +70,7 @@ function regClear() {
     document.getElementById("regAddress").value = "";
     document.getElementById("regPassword").value = "";
 }
+
 function loginLetsGo() {
     let name = document.getElementById("logName").value.trim();
     let password = document.getElementById("logPassword").value;
@@ -82,7 +85,7 @@ function loginLetsGo() {
 
 
 //---------------------------------------------------------------------------------------------------
-const productList = {
+let productList = {
     "Burgers": [
         { itemCode: "B1001", name: "Classic Burger (Large)", price: 750.00, discount: 0, img: "../img/burgers/Classic Burger.jpg" },
         { itemCode: "B1002", name: "Classic Burger (Regular)", price: 1500.00, discount: 15, img: "../img/burgers/Classic Burger1.jpg" },
@@ -178,9 +181,105 @@ function addToOrderList(index) {
     }
     updateOrderList();
 }
-// function updateOrderList() {
-//     const orderListContainer = 
-// }
+
+function updateOrderList() {
+    const orderListContainer = document.getElementById('order-list');
+    orderListContainer.innerHTML = '';
+
+    let subTotal = 0;
+    let totalItems = 0;
+    let discount = 0;
+    let total = 0;
+
+    orderList.forEach((item, index) => {
+        if (item.quantity > 0) {
+            subTotal += item.price * item.quantity;
+            totalItems += item.quantity;
+            discount += (item.price * item.quantity) * (item.discount / 100);
+
+            const orderItem = document.createElement('div');
+            console.log(orderItem);
+            
+            orderItem.className = 'order-item d-flex justify-content-between m-3';
+            orderItem.innerHTML = `
+                <div class="col-5">
+                    <p class="m-2">${item.name}</p>
+                    <p class="m-2">${item.itemCode}</p>
+                </div>
+                <div class="col-3 mt-3">
+                    <button class="btn btn-sm btn-secondary" onclick="changeQuantity(${index}, -1)">-</button>
+                    <span>${item.quantity}</span>
+                    <button class="btn btn-sm btn-secondary" onclick="changeQuantity(${index}, 1)">+</button>
+                </div>
+                <div class="col-2">
+                    <p class="m-3">LKR ${(item.price * item.quantity).toFixed(2)}</p>
+                </div>
+                <div class="col-2 text-center">
+                    <button type="button" class="btnDelete m-3 pb-3" onclick="removeItem(${index})"><img src="../img/Delete icon.svg" width="20" alt="Delete"></button>
+                </div>
+            `;
+            orderListContainer.appendChild(orderItem);
+        }
+    });
+
+    document.getElementById('total-items').innerHTML = totalItems;
+    document.getElementById('subTotal').innerHTML = `LKR ${subTotal.toFixed(2)}`;
+    document.getElementById('lblDiscount').innerHTML = `LKR ${discount.toFixed(2)}`;
+    total = subTotal - discount;
+    document.getElementById('total').innerHTML = `LLKR ${total.toFixed(2)}`;
+}
+
+function changeQuantity(index, change) {
+    orderList[index].quantity += change;
+    if (orderList[index].quantity < 0) {
+        orderList[index].quantity = 0;
+    }
+    updateOrderList();
+}
+
+function removeItem(index) {
+    orderList[index].quantity = 0;
+    updateOrderList();
+}
+
+function clearOrderList() {
+    orderList.length = 0;
+    updateOrderList();
+}
+
+const customerArray = [{
+    customerID: "C001",
+    customerName: "Customer01",
+    customerTelephoneNumber: "0716234479",
+    customerAddress: "Galle"
+},
+{
+    customerID: "C002",
+    customerName: "Customer02",
+    customerTelephoneNumber: "0723446336",
+    customerAddress: "Colombo"
+},];
+
+document.getElementById('order-id').innerHTML = "O001";
+
+let phoneNumber = document.getElementById('customer-phoneNumber');
+phoneNumber.addEventListener("keypress", function(event) {
+    if (event.keyCode == 13) {
+        event.preventDefault();
+        searchCustomerByPhoneNumber();
+    }
+});
+
+function searchCustomerByPhoneNumber() {
+    let number = document.getElementById('customer-phoneNumber').value;
+    for (let i = 0; i < customerArray.length; i++) {
+        if (customerArray[i].customerTelephoneNumber === number) {
+            document.getElementById('customer-name').value = customerArray[i].customerName;
+        }
+    }
+}
+
+// let form = document.getElementById('');
 
 document.addEventListener('DOMContentLoaded', () => {
     renderProductList('Burgers');
