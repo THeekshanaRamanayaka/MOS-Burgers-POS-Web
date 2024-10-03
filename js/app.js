@@ -159,12 +159,12 @@ function renderProductList(category) {
             productCard.className = 'col-3 mb-3';
             productCard.innerHTML = `
                 <div class="card product-card m-0" onclick="addToOrderList(${index})">
-                <img src="${product.img}" class="card-img-top" alt="${product.name}">
-                <div class="card-body">
-                    <h6 class="card-title">${product.name}</h6>
-                    <p class="card-text">${product.price.toFixed(2)} LKR</p>
-                <?div>
-            </div`;
+                    <img src="${product.img}" class="card-img-top" alt="${product.name}">
+                    <div class="card-body">
+                        <h6 class="card-title">${product.name}</h6>
+                        <p class="card-text">${product.price.toFixed(2)} LKR</p>
+                    </div>
+                </div`;
             productListContainer.appendChild(productCard);
         });
     }
@@ -226,7 +226,7 @@ function updateOrderList() {
     document.getElementById('subTotal').innerHTML = `LKR ${subTotal.toFixed(2)}`;
     document.getElementById('lblDiscount').innerHTML = `LKR ${discount.toFixed(2)}`;
     total = subTotal - discount;
-    document.getElementById('total').innerHTML = `LLKR ${total.toFixed(2)}`;
+    document.getElementById('total').innerHTML = `LKR ${total.toFixed(2)}`;
 }
 
 function changeQuantity(index, change) {
@@ -279,8 +279,88 @@ function searchCustomerByPhoneNumber() {
     }
 }
 
-// let form = document.getElementById('');
+function searchProducts() {
+    const searchInput = document.getElementById('search-bar').value.toLowerCase();
+    const productListContainer = document.getElementById('product-list');
+    productListContainer.innerHTML = '';
 
-document.addEventListener('DOMContentLoaded', () => {
-    renderProductList('Burgers');
-});
+    Object.keys(productList).forEach(category => {
+        productList[category].forEach((product, index) => {
+            if (product.name.toLowerCase().includes(searchInput)) {
+                const productCard = document.createElement('div');
+                productCard.className = 'col-3 mb-3';
+                productCard.innerHTML = `
+                    <div class="card product-card m-0" onclick="addToOrderList(${index})">
+                        <img src="${product.img}" class="card-img-top" alt="${product.name}">
+                        <div class="card-body">
+                            <h6 class="card-title">${product.name}</h6>
+                            <p class="card-text">${product.price.toFixed(2)} LKR</p>
+                        </div>
+                    </div`;
+                productListContainer.appendChild(productCard);
+            }
+        });
+    });
+}
+document.getElementById('search-bar').addEventListener('input', searchProducts);
+
+window.onload = function() {
+    console.log("onload");
+    renderProductList(currentCategory);
+}
+
+function placeOrder() {
+    console.log("placeOrder function called");
+
+    // Define the document definition
+    var docDefinition = {
+        content: [
+            { text: 'Order Details', style: 'header' },
+            { text: 'Order ID: ' + document.getElementById('order-id').innerHTML, margin: [0, 10, 0, 5] },
+            { text: 'Customer Name: ' + document.getElementById('customer-name').value, margin: [0, 0, 0, 5] },
+            { text: 'Phone Number: ' + document.getElementById('customer-phoneNumber').value, margin: [0, 0, 0, 15] },
+            {
+                table: {
+                    headerRows: 1,
+                    widths: ['*', 'auto', 'auto', 'auto'],
+                    body: [
+                        ['Item', 'Quantity', 'Price', 'Total']
+                    ]
+                }
+            },
+            { text: 'Total Items: ' + document.getElementById('total-items').innerHTML, margin: [0, 10, 0, 5] },
+            { text: 'Sub Total: ' + document.getElementById('subTotal').innerHTML, margin: [0, 0, 0, 5] },
+            { text: 'Discount: ' + document.getElementById('lblDiscount').innerHTML, margin: [0, 0, 0, 5] },
+            { text: 'Total: ' + document.getElementById('total').innerHTML, style: 'total' }
+        ],
+        styles: {
+            header: {
+                fontSize: 18,
+                bold: true,
+                margin: [0, 0, 0, 10]
+            },
+            total: {
+                fontSize: 16,
+                bold: true,
+                margin: [0, 10, 0, 0]
+            }
+        }
+    };
+
+    // Add order items to the table
+    orderList.forEach((item) => {
+        if (item.quantity > 0) {
+            docDefinition.content[4].table.body.push([
+                item.name,
+                item.quantity.toString(),
+                item.price.toFixed(2),
+                (item.price * item.quantity).toFixed(2)
+            ]);
+        }
+    });
+
+    // Generate the PDF
+    pdfMake.createPdf(docDefinition).download('order_details.pdf');
+
+    console.log("PDF generation initiated");
+}

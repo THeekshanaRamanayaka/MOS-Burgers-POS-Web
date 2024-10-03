@@ -803,12 +803,30 @@ font-weight: 500;
     color: white;
     border-color: #ee5f47;
 }
+
+.card-main-customer {
+    overflow-y: auto;
+    max-height: 725px;
+}
+.customer-card {
+    background-color: #ffffffb1;
+    border: 1px solid #ddd;
+    padding: 10px;
+    cursor: pointer;
+    height: 10rem;
+}
+.customer-card .card-img {
+    border-radius: 10px;
+    border: 1px solid #ee604751;
+    height: 10 !important;
+    width: 20 !important;
+}
 .box5 {
     width: 98%;
-    height: 795px;
+    height: 730px;
     background-color: rgba(255, 255, 255, 0.193);
     border-radius: 10px;
-    margin-top: 2.5%;
+    margin-top: 7.5%;
 }
 .boxEnterCustomerID {
     width: 90%;
