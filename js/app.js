@@ -270,7 +270,7 @@ const customerList = [
     { customerId: "SL20", customerName: "Chandrika Kumaratunga", telephoneNumber: "+94 71 012 3456", address: "6 Lake View Drive, Kurunegala", img: "../img/user.webp" },
 ];
 
-document.getElementById('order-id').innerHTML = "O001";
+document.getElementById('order-id').innerHTML = "O021";
 
 let customerId = document.getElementById('customer-id');
 customerId.addEventListener("keypress", function(event) {

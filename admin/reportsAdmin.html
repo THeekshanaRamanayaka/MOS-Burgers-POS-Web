@@ -10,8 +10,7 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="CSS/style.css">
-    <link rel="stylesheet" href="CSS/styleHome.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <div class="container-fluid">
@@ -21,12 +20,12 @@
                     <h3 class="leftPanelTitle"><span style="color: #F54628;">MOS</span> <span style="color: #ffffff;">BURGERS</span></h3>
                 </div>
                 <div class="d-grid gap-2">
-                    <button class="btn btn-light btnPlaceOrder">Place Order</button>
-                    <button class="btn btn-light btnStores">Stores</button>
-                    <button class="btn btn-light btnCustomers">Customers</button>
-                    <button class="btn btn-light btnOrders">Orders</button>
+                    <button class="btn btn-light btnPlaceOrder" onclick="window.location.href = 'placeOrderAdmin.html'">Place Order</button>
+                    <button class="btn btn-light btnStores" onclick="window.location.href = 'storesAdmin.html'">Stores</button>
+                    <button class="btn btn-light btnCustomers" onclick="window.location.href = 'customerAdmin.html'">Customers</button>
+                    <button class="btn btn-light btnOrders" onclick="window.location.href = 'ordersAdmin.html'">Orders</button>
                     <button class="btn btn-light btnReports">Reports</button>
-                    <button class="btn btn-light btnLogout">Logout</button>
+                    <button class="btn btn-light btnLogout" onclick="window.location.href = '../index.html'">Logout</button>
                 </div>
             </div>
             <div class="col-12 col-md-10 centerPanelStores">
