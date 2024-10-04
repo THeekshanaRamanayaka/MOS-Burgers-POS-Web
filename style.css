@@ -614,6 +614,17 @@ font-weight: 500;
     border-radius: 10px;
     border-bottom: 1px solid #ddd;
 }
+.ordered-item {
+    width: 90%;
+    height: fit-content;
+    background-color: #43434380;
+    border-radius: 10px;
+    border-bottom: 1px solid #ddd;
+}
+.ordered-item p {
+    font-weight: 500;
+    font-size: 0.65rem;
+}
 .btnDelete {
     border: none;
     background: none;
@@ -625,7 +636,7 @@ font-weight: 500;
 /* place order selected item panel */
 .box2 {
     width: 90%;
-    height: 70px;
+    height: 40px;
     margin: 6% 5% 0% 5%;
     background-color: rgba(213, 213, 213, 0.89);
     border-radius: 10px;
@@ -641,7 +652,7 @@ font-weight: 500;
 .boxEnterCustomerName {
     width: 90%;
     height: 40px;
-    margin: 6% 5% 0% 5%;
+    margin: 2% 5% 0% 5%;
     background-color: rgba(255, 255, 255, 0.738);
     border-radius: 10px;
     border-color: #ee5f47;
@@ -920,11 +931,22 @@ font-weight: 500;
 }
 .box6 {
     width: 98%;
-    height: 795px;
+    height: 730px;
     background-color: rgba(255, 255, 255, 0.193);
     border-radius: 10px;
-    margin-top: 2.5%;
+    margin-top: 7.5%;
 } 
+.card-main-order {
+    overflow-y: auto;
+    max-height: 725px;
+}
+.order-card {
+    background-color: #ffffffb1;
+    border: 1px solid #ddd;
+    padding: 10px;
+    cursor: pointer;
+    height: 10rem;
+}
 .box7 {
     width: 96%;
     height: 600px;

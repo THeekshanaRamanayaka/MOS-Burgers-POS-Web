@@ -247,23 +247,33 @@ function clearOrderList() {
     updateOrderList();
 }
 
-const customerArray = [{
-    customerID: "C001",
-    customerName: "Customer01",
-    customerTelephoneNumber: "0716234479",
-    customerAddress: "Galle"
-},
-{
-    customerID: "C002",
-    customerName: "Customer02",
-    customerTelephoneNumber: "0723446336",
-    customerAddress: "Colombo"
-},];
+const customerList = [
+    { customerId: "SL01", customerName: "Kumara Perera", telephoneNumber: "+94 77 123 4567", address: "15 Galle Road, Colombo 03", img: "../img/user.webp" },
+    { customerId: "SL02", customerName: "Nirmala Fernando", telephoneNumber: "+94 71 234 5678", address: "42 Kandy Road, Kandy", img: "../img/user.webp" },
+    { customerId: "SL03", customerName: "Ahmed Farook", telephoneNumber: "+94 76 345 6789", address: "7 Main Street, Galle", img: "../img/user.webp" },
+    { customerId: "SL04", customerName: "Lakshmi Gunawardena", telephoneNumber: "+94 75 456 7890", address: "23 Temple Road, Nuwara Eliya", img: "../img/user.webp" },
+    { customerId: "SL05", customerName: "Ravi Bandara", telephoneNumber: "+94 78 567 8901", address: "56 Beach Road, Negombo", img: "../img/user.webp" },
+    { customerId: "SL06", customerName: "Fathima Hussain", telephoneNumber: "+94 70 678 9012", address: "9 Hill Street, Badulla", img: "../img/user.webp" },
+    { customerId: "SL07", customerName: "Chaminda Silva", telephoneNumber: "+94 77 789 0123", address: "31 Lake Road, Anuradhapura", img: "../img/user.webp" },
+    { customerId: "SL08", customerName: "Priyanka Rajapaksa", telephoneNumber: "+94 71 890 1234", address: "18 Fort Road, Galle", img: "../img/user.webp" },
+    { customerId: "SL09", customerName: "Nalini Wickramasinghe", telephoneNumber: "+94 76 901 2345", address: "5 Temple Street, Kataragama", img: "../img/user.webp" },
+    { customerId: "SL10", customerName: "Asanka Jayawardena", telephoneNumber: "+94 75 012 3456", address: "27 Beach Avenue, Trincomalee", img: "../img/user.webp" },
+    { customerId: "SL11", customerName: "Dilshan Mendis", telephoneNumber: "+94 78 123 4567", address: "14 Hill Road, Nuwara Eliya", img: "../img/user.webp" },
+    { customerId: "SL12", customerName: "Shirani De Silva", telephoneNumber: "+94 70 234 5678", address: "39 Main Road, Jaffna", img: "../img/user.webp" },
+    { customerId: "SL13", customerName: "Mohamed Ismail", telephoneNumber: "+94 77 345 6789", address: "8 Galle Face Terrace, Colombo 03", img: "../img/user.webp" },
+    { customerId: "SL14", customerName: "Deepika Perera", telephoneNumber: "+94 71 456 7890", address: "22 Kandy Road, Peradeniya", img: "../img/user.webp" },
+    { customerId: "SL15", customerName: "Rohan Gunasekara", telephoneNumber: "+94 76 567 8901", address: "11 Beach Road, Bentota", img: "../img/user.webp" },
+    { customerId: "SL16", customerName: "Samanthi Ratnayake", telephoneNumber: "+94 75 678 9012", address: "45 Temple Street, Polonnaruwa", img: "../img/user.webp" },
+    { customerId: "SL17", customerName: "Tariq Jameel", telephoneNumber: "+94 78 789 0123", address: "3 Main Street, Kalmunai", img: "../img/user.webp" },
+    { customerId: "SL18", customerName: "Ayesha Munasinghe", telephoneNumber: "+94 70 890 1234", address: "17 Hill Road, Hatton", img: "../img/user.webp" },
+    { customerId: "SL19", customerName: "Lasith Malinga", telephoneNumber: "+94 77 901 2345", address: "29 Galle Road, Matara", img: "../img/user.webp" },
+    { customerId: "SL20", customerName: "Chandrika Kumaratunga", telephoneNumber: "+94 71 012 3456", address: "6 Lake View Drive, Kurunegala", img: "../img/user.webp" },
+];
 
 document.getElementById('order-id').innerHTML = "O001";
 
-let phoneNumber = document.getElementById('customer-phoneNumber');
-phoneNumber.addEventListener("keypress", function(event) {
+let customerId = document.getElementById('customer-id');
+customerId.addEventListener("keypress", function(event) {
     if (event.keyCode == 13) {
         event.preventDefault();
         searchCustomerByPhoneNumber();
@@ -271,10 +281,11 @@ phoneNumber.addEventListener("keypress", function(event) {
 });
 
 function searchCustomerByPhoneNumber() {
-    let number = document.getElementById('customer-phoneNumber').value;
-    for (let i = 0; i < customerArray.length; i++) {
-        if (customerArray[i].customerTelephoneNumber === number) {
-            document.getElementById('customer-name').value = customerArray[i].customerName;
+    let id = document.getElementById('customer-id').value;
+    for (let i = 0; i < customerList.length; i++) {
+        if (customerList[i].customerId === id) {
+            document.getElementById('customer-name').value = customerList[i].customerName;
+            document.getElementById('customer-phoneNumber').value = customerList[i].telephoneNumber;
         }
     }
 }
@@ -305,7 +316,6 @@ function searchProducts() {
 document.getElementById('search-bar').addEventListener('input', searchProducts);
 
 window.onload = function() {
-    console.log("onload");
     renderProductList(currentCategory);
 }
 
@@ -317,6 +327,7 @@ function placeOrder() {
         content: [
             { text: 'Order Details', style: 'header' },
             { text: 'Order ID: ' + document.getElementById('order-id').innerHTML, margin: [0, 10, 0, 5] },
+            { text: 'Customer ID' + document.getElementById('customer-id').innerHTML, margin: [0, 0, 0, 5] },
             { text: 'Customer Name: ' + document.getElementById('customer-name').value, margin: [0, 0, 0, 5] },
             { text: 'Phone Number: ' + document.getElementById('customer-phoneNumber').value, margin: [0, 0, 0, 15] },
             {
@@ -350,7 +361,7 @@ function placeOrder() {
     // Add order items to the table
     orderList.forEach((item) => {
         if (item.quantity > 0) {
-            docDefinition.content[4].table.body.push([
+            docDefinition.content[5].table.body.push([
                 item.name,
                 item.quantity.toString(),
                 item.price.toFixed(2),
@@ -363,4 +374,10 @@ function placeOrder() {
     pdfMake.createPdf(docDefinition).download('order_details.pdf');
 
     console.log("PDF generation initiated");
+
+    // Create an array list to store order details in localStorage
+    let storedOrderDetails = JSON.parse(localStorage.getItem('orderDetails')) || [];
+    storedOrderDetails.push(orderList);
+    localStorage.setItem('orderDetails', JSON.stringify(storedOrderDetails));
+    console.log("Order details stored in localStorage");
 }
